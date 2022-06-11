@@ -133,7 +133,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       this.steps = this.nav.find('.nav-link'); // Content container
 
-      this.container = this._getFirstDescendant('.tab-content'); // Content pages
+      this.container = this._getFirstDescendant('.tab-content'); // Content errors
 
       this.pages = this.container.children('.tab-pane'); // Assign options
 

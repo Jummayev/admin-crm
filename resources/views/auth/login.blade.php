@@ -33,7 +33,7 @@
                         <div class="col-xl-12">
                             <div class="auth-form">
                                 <div class="text-center mb-3">
-                                    <a href="index.html"><img src="{{asset('images/logo-full.png')}}" alt=""></a>
+                                    <a href="{{ url('/') }}"><img src="{{asset('images/logo-full.png')}}" alt=""></a>
                                 </div>
                                 <h4 class="text-center mb-4">Sign in your account</h4>
                                 <form method="POST" action="{{ route('login') }}">
@@ -44,11 +44,10 @@
                                                type="text"
                                                value="{{ old('username') }}"
                                                name="username">
-                                        @error('username')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                        @if($errors->first('username'))
+                                                <strong style="color: #9d0621">{{ $errors->first('username') }}</strong>
+                                        @endif
+
                                     </div>
                                     <div class="mb-3">
                                         <label class="mb-1"><strong>Password</strong></label>
@@ -68,7 +67,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <a href="page-forgot-password.html">Forgot Password?</a>
+                                            <a href="{{ route('password.request') }}">Forgot Password?</a>
                                         </div>
                                     </div>
                                     <div class="text-center">
